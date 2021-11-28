@@ -10,7 +10,7 @@ namespace Task10_1
     {
         static void Main(string[] args)
         {
-            Angle angle = new Angle(34, 26, 12);
+            Angle angle = new Angle(298, 54, 32);
             Console.WriteLine("Угол [ГМС]: {0}°{1}'{2}\"", angle.Gradus,angle.Min,angle.Sec);
             Console.Write("Угол [радианы]: ");
             angle.ToRadians(angle.Gradus, angle.Min, angle.Sec);
@@ -34,20 +34,14 @@ namespace Task10_1
                 }
                 else
                 {
-                    if (value == 360)
+                    if (value >= 360)
                     {
-                        gradus = 0;
+                        Console.WriteLine("Градусы должны быть в диапазоне 0-359");
+                        //gradus = value % 360; //для приведения значений минут к диапазону 0-359
                     }
                     else
                     {
-                        if (value > 360)
-                        {
-                            gradus = value % 360;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Градусы не могут быть отрицательными");
-                        }
+                        Console.WriteLine("Градусы не могут быть отрицательными");
                     }
                 }
             }
@@ -66,20 +60,14 @@ namespace Task10_1
                 }
                 else
                 {
-                    if (value == 60)
+                    if (value >= 60)
                     {
-                        min = 0;
+                        Console.WriteLine("Минуты должны быть в диапазоне 0-59");
+                        //min = value % 60; //для приведения значений минут к диапазону 0-59
                     }
                     else
                     {
-                        if (value > 60)
-                        {
-                            min = value % 60;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Минуты не могут быть отрицательными");
-                        }
+                        Console.WriteLine("Минуты не могут быть отрицательными");
                     }
                 }
             }
@@ -98,20 +86,14 @@ namespace Task10_1
                 }
                 else
                 {
-                    if (value == 60)
+                    if (value >= 60)
                     {
-                        sec = 0;
+                        Console.WriteLine("Секунды должны быть в диапазоне 0-59");
+                        //sec = value % 60; //для приведения значений секунд к диапазону 0-59
                     }
                     else
                     {
-                        if (value > 60)
-                        {
-                            sec = value % 60;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Секунды не могут быть отрицательными");
-                        }
+                        Console.WriteLine("Секунды не могут быть отрицательными");
                     }
                 }
             }
